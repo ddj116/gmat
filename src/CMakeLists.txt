@@ -41,6 +41,7 @@ OPTION(PLUGIN_EXTRAPROPAGATOR "ExtraPropagation Plugin" OFF)
 OPTION(PLUGIN_GMATFUNCTION "GmatFunction Plugin" OFF)
 OPTION(PLUGIN_MATLABINTERFACE "MatlabInterface Plugin" OFF)
 OPTION(PLUGIN_STATION "Station Plugin" ON)
+OPTION(PLUGIN_FORMATION "Formation Plugin" ON)
 
 # Optional Jazz Plugin Inputs
 
@@ -255,4 +256,10 @@ endif()
 # Station Plugin binary
 if (PLUGIN_STATION)
 	SUBDIRS(../plugins/StationPlugin/src/)
+endif()
+
+# ====================================================================
+# Formation Plugin binary
+if (PLUGIN_FORMATION)
+	SUBDIRS(../plugins/FormationPlugin/src/)
 endif()
