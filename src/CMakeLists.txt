@@ -23,7 +23,7 @@ PROJECT(GMAT)
 cmake_minimum_required(VERSION 2.6)
 
 # Set Input Options
-SET(GMAT_VERSION "2012" CACHE STRING "The version of the build")
+SET(GMAT_VERSION "2013a" CACHE STRING "The version of the build")
 SET(F2C_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../depends/f2c" CACHE STRING "F2C Root Directory")
 SET(CSPICE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../depends/cspice" CACHE STRING "CSpice Root Directory")
 SET(WXWIDGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../depends/wxWidgets/wxWidgets-2.8.12" CACHE STRING "wxWidget Root Directory")
@@ -39,7 +39,8 @@ OPTION(PLUGIN_ESTIMATION "Estimation Plugin" OFF)
 OPTION(PLUGIN_EVENTLOCATOR "EventLocator Plugin" OFF)
 OPTION(PLUGIN_EXTRAPROPAGATOR "ExtraPropagation Plugin" OFF)
 OPTION(PLUGIN_GMATFUNCTION "GmatFunction Plugin" OFF)
-OPTION(PLUGIN_MATLABINTERFACE "MatlabInterface Plguin" OFF)
+OPTION(PLUGIN_MATLABINTERFACE "MatlabInterface Plugin" OFF)
+OPTION(PLUGIN_STATION "Station Plugin" ON)
 
 # Optional Jazz Plugin Inputs
 
@@ -248,4 +249,10 @@ endif()
 # ====================================================================
 # MatlabInterface Plugin binary
 if (PLUGIN_MATLABINTERFACE)
+endif()
+
+# ====================================================================
+# Station Plugin binary
+if (PLUGIN_STATION)
+	SUBDIRS(../plugins/StationPlugin/src/)
 endif()
