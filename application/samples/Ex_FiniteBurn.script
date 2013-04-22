@@ -1,0 +1,5 @@
+Create Array aHigh[10,10] aLow[10,10]
+
+GMAT aHigh(1, 2)=	 			  3.14159; % doesn't work
+BeginMissionSequence
+aLow  (2,2) = 1; % works
