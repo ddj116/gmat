@@ -30,7 +30,7 @@ SET(WXWIDGET_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../depends/wxWidgets/wxWidgets-2.8
 OPTION(VERBOSE_MAKE "VerboseMake" OFF)
 OPTION(DEBUG_BUILD "DebugBuild" OFF)
 OPTION(PROFILE_BUILD "ProfileBuild" OFF)
-OPTION(64_BIT "64Bit" OFF)
+SET(64_BIT ON)
 
 # Optional Plugin Inputs
 OPTION(PLUGIN_CINTERFACE "CInterface Plugin" ON)
@@ -159,8 +159,10 @@ endif()
 
 # Set 64 bit Definitions and directories
 if (64_BIT)
-    MESSAGE("64-bit compilation")
+    MESSAGE(STATUS "Set up for 64-bit compilation")
     ADD_DEFINITIONS("-DUSE_64_BIT_LONGS")
+else()
+    MESSAGE(STATUS "Set up for 32-bit compilation")
 endif()
 
 # Set DevIL Proprocessor defs for linux

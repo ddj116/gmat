@@ -40,7 +40,7 @@ if [ $mac == true ]
 then
 		cd ../build/macosx
 else 
-		cd ../build/linux
+		cd ../build/linux64
 fi
 
 # Generate unix makefiles
